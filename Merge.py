@@ -1,0 +1,22 @@
+import pandas as pd
+
+df1=pd.DataFrame({"city":["new york","india","goa","US"],"temp":[12,22,23,34]})
+df2=pd.DataFrame({"city":["new york","india","simla","US"],"humi":[6,13,23,17]})
+print(df1)
+print(df2)
+print(("performing outer join i.e union of 2 tables:"))
+df3=pd.merge(df1,df2,on="city",how="outer")
+print((df3))
+print("######################################################################################################################")
+print("Performing inner join on 2 tables:")
+df4=pd.merge(df1,df2,on="city",indicator=True)
+print(df4)
+print("############################################################################################################")
+df5=pd.merge(df1,df2,on="city",how="left")
+print("Performing left join on 2 tables")
+print(df5)
+print("###############################################################################################################")
+df6=pd.merge(df1,df2,on="city",how="right")
+print("Performing right join on 2 tables")
+print(df6)
+
